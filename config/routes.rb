@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres, only: [:index]
   resources :borrow_requests
   resources :books
   resources :users

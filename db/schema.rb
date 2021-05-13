@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_030042) do
+ActiveRecord::Schema.define(version: 2021_05_07_184424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_genres", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_book_genres_on_book_id"
+    t.index ["genre_id"], name: "index_book_genres_on_genre_id"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -37,6 +46,12 @@ ActiveRecord::Schema.define(version: 2021_05_07_030042) do
     t.index ["user_id"], name: "index_borrow_requests_on_user_id"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "points", default: 0
@@ -47,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_05_07_030042) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "book_genres", "books"
+  add_foreign_key "book_genres", "genres"
   add_foreign_key "books", "users"
   add_foreign_key "borrow_requests", "books"
   add_foreign_key "borrow_requests", "users"
