@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :genres, only: [:index]
-  resources :borrow_requests
-  resources :books
-  resources :users
-
-  post 'auth/login', to: 'authentication#login'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  defaults format: :json do
+    resources :genres, only: [:index]
+    resources :borrow_requests
+    resources :books
+    resources :users
+    post 'auth/login', to: 'authentication#login'
+  end
 end
