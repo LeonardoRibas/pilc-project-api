@@ -49,7 +49,6 @@ Book.create!([
                  third_question: 'At vero eos et accusamus et iusto odio' },
 
                { user_id: 3, title: 'O Guarani', author: 'José de Alencar', rewardable: false }
-
              ])
 
 BorrowRequest.create!([
@@ -69,7 +68,6 @@ Genre.create!([
                 { name: 'Crônica' },
                 { name: 'Poesia' },
                 { name: 'Aventura' }
-
               ])
 
 BookGenre.create!([
@@ -99,5 +97,4 @@ BookGenre.create!([
 
                     { book_id: 9, genre_id: 1 },
                     { book_id: 9, genre_id: 4 }
-
                   ])
