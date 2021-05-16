@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-              { name: 'Leonardo Ribas', email: 'leonas.ribas@gmail.com', password: '123456', phone: '11912341234' },
+              { name: 'Leonardo Ribas', email: 'leo.ribas@gmail.com', password: '123456', phone: '11912341234' },
               { name: 'Lucas Gonçalves', email: 'lucas.goncalves@gmail.com', password: '123456', phone: '61912341234' },
               { name: 'Alexandre Victor', email: 'alexandre.victor@gmail.com', password: '123456',
                 phone: '61943214321' }
             ])
 
 Book.create!([
-               { user_id: 1, title: 'Dom Casmurro', author: 'Machado de Assis', rewardable: true,
+               { user_id: 1, title: 'Dom Casmurro', author: 'Machado de Assis', rewardable: true, cover: 'https://ia800307.us.archive.org/view_archive.php?archive=/0/items/olcovers229/olcovers229.zip&file=2291175.jpg',
                  first_question: 'Lorem ipsum dolor sit amet?',
                  second_question: 'Sed ut perspiciatis unde omnis?',
                  third_question: 'At vero eos et accusamus et iusto odio' },
