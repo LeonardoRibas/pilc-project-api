@@ -40,6 +40,14 @@ class BooksController < ApplicationController
     @book.destroy
   end
 
+  def mybooks
+    @books = @current_user.books
+  end
+
+  def wanted_books
+    @books = @current_user.wanted_books
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

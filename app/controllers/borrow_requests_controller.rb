@@ -5,7 +5,7 @@ class BorrowRequestsController < ApplicationController
   # GET /borrow_requests
   # GET /borrow_requests.json
   def index
-    @borrow_requests = BorrowRequest.all
+    @borrow_requests = BorrowRequest.where(owner: @current_user.id)
   end
 
   # GET /borrow_requests/1

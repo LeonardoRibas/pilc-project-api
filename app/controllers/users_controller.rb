@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authorize_request, only: %i[show_me]
   before_action :set_user, only: %i[show update destroy]
 
   # GET /users
@@ -7,9 +8,15 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
-  def show; end
+  # GET /users/id
+  # GET /users/id.json
+  def show
+  end
+
+  #GET /user
+  def show_me
+    @user = @current_user
+  end
 
   # POST /users
   # POST /users.json
