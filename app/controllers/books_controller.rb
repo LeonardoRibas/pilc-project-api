@@ -16,7 +16,6 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params.merge!(user_id: @current_user.id))
-
     if @book.save
       render :show, status: :created, location: @book
     else
@@ -57,6 +56,6 @@ class BooksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def book_params
-    params.require(:book).permit(:title, :author, :rewardable, :first_question, :second_question, :third_question)
+    params.require(:book).permit(:title, :author, :rewardable, :first_question, :second_question, :third_question, genre_ids: [])
   end
 end
