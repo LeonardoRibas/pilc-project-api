@@ -9,7 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
+#  Copyright by Alexandre Victor, Lucas Gonçalves e Leonardo Ribas in 2021.
 ActiveRecord::Schema.define(version: 2021_05_17_081042) do
 
   # These are extensions that must be enabled in order to support this database
